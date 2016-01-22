@@ -1,1 +1,21 @@
-<h1>Yo!</h1>
+<div class="dashboard" ng-controller="homeController">
+  <div class="dashboard-side-nav">
+
+  </div>
+  <div class="dashboard-inner">
+
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a class="navbar-brand">The App</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a ng-click="subpage='partials/conceptLearning/conceptLearning.template.html'">Concept Learning</a></li>
+        <li><a ng-click="subpage='partials/patientLearning/patientLearning.template.html'">Patient Learning</a></li>
+      </ul>
+    </nav>
+
+    <div class="dashboard-body">
+      <ng-include src="subpage"></ng-include>
+    </div>
+  </div>
+</div>

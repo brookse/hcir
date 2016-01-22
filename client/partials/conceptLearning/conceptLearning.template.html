@@ -1,0 +1,12 @@
+<div class="conceptLearning" ng-controller="conceptLearningController">
+  <ul class="nav nav-tabs nav-justified">
+    <li role="presentation"><a ng-click="subsubpage='templates/defineSeedPhrase/defineSeedPhrase.template.html'">Define Seed Phrases</a></li>
+    <li role="presentation"><a ng-click="subsubpage='templates/defineRelevancies/defineRelevancies.template.html'">Define Relevancies</a></li>
+    <li role="presentation"><a ng-click="subsubpage='templates/createMetaConcepts/createMetaConcepts.template.html'">Create Meta Concepts</a></li>
+    <li role="presentation"><a ng-click="subsubpage='templates/defineRelations/defineRelations.template.html'">Define Relations</a></li>
+  </ul>
+
+  <div class="dashboard-body">
+    <ng-include src="subsubpage"></ng-include>
+  </div>
+</div>
