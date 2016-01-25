@@ -1,11 +1,11 @@
 angular.module('myApp').controller('defineSeedPhraseController',
 ['$scope', '$location',
 function($scope, $location) {
-  $scope.concepts = [
+  $scope.concepts  = [
     {
-      name: "concept 1",
+      name: "coronary artery disease",
       seedPhrases: [
-        "one", "two", "three"
+        "coronary artery disease", "symptoms", "treatments"
       ]
     }
   ];

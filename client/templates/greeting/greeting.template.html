@@ -1,14 +1,16 @@
-<div class="jumbotron">
-  <h1>Welcome!</h1>
-  <p>
-    Welcome to the medical concept learner.
-  </p>
-  <p>
-    Here, you are provided with an interactive search engine for learning medical concepts from natural language text. Define a medical concept, and the system will learn that concept, scrape databases for information on the concept, and provide related information so you can expand their mental model of the concept.
-  </p>
-  <p><a class="btn btn-primary pull-right" onclick="parent.subpage='partials/conceptLearning/conceptLearning.template.html'" role="button">Begin Defining Seed Phrases</a></p>
-  <p>
-    You may also search through real-world patient records in order to view trends in maladies and symptoms, prescriptions and their side effects, and physician records.
-  </p>
-  <p><a class="btn btn-primary pull-right" onclick="parent.subpage='partials/patientLearning/patientLearning.template.html'" role="button">Search Patient Directory</a></p>
+<div class="greetingTemplate" ng-controller="greetingController">
+  <div class="jumbotron">
+    <h1>Welcome!</h1>
+    <p>
+      Welcome to the medical concept learner.
+    </p>
+    <p>
+      Here, you are provided with an interactive search engine for learning medical concepts from natural language text. Define a medical concept, and the system will learn that concept, scrape databases for information on the concept, and provide related information so you can expand their mental model of the concept.
+    </p>
+    <p><a class="btn btn-primary pull-right" ng-controller="greetingController" onclick="goToDSP()" role="button">Begin Defining Seed Phrases</a></p>
+    <p>
+      You may also search through real-world patient records in order to view trends in maladies and symptoms, prescriptions and their side effects, and physician records.
+    </p>
+    <p><a class="btn btn-primary pull-right" ng-controller="greetingController" onclick="goToSPD()" role="button">Search Patient Directory</a></p>
+  </div>
 </div>

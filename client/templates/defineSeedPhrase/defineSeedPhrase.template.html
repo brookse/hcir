@@ -26,8 +26,9 @@
       <div ng-repeat="concept in concepts">
         <li class="list-group-item">
           <h5><b>{{ concept.name }}</b></h5><button type="button" class="btn btn-default pull-right">Explore this concept</button><br>
+          <b>Seed Phrases:</b>
           <div ng-repeat="phrase in concept.seedPhrases">
-            {{ phrase }}<br>
+            - {{ phrase }}<br>
           </div>
         </li>
       </div>

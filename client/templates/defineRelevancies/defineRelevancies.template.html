@@ -1,4 +1,21 @@
-<div class="page-header">Define Relevancies</div>
-<div class="jumbotron">
-  <p>These are the instructions on how to use this page.</p>
+<div class="defineRelevanciesTemplate" ng-controller="defineRelevanciesController">
+  <div class="page-header">Define Relevancies</div>
+  <div class="jumbotron">
+    <p>These are the instructions on how to use this page.</p>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Relevancy</th><th>Candidate Result</th><th>Context</th><th>Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <div ng-repeat="result in candidateResults">
+        <tr>
+          <td>{{ result.relevancy }}</td><td>{{ result.term }}</td><td>{{ result.context }}</td><td><a class="btn btn-default" href={{result.source}}>{{result.sourceName}}</a></td>
+        </tr>
+      </div>
+    </tbody>
+  </table>
 </div>
