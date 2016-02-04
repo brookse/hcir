@@ -11,8 +11,11 @@ function($scope, $location) {
     {
       name: "diabetes",
       seedPhrases: [
-
+        "type 1"
       ]
     }
   ];
+
+  
+
 }]);

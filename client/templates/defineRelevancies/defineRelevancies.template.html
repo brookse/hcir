@@ -11,11 +11,9 @@
       </tr>
     </thead>
     <tbody>
-      <div ng-repeat="result in candidateResults">
-        <tr>
-          <td>{{ result.relevancy }}</td><td>{{ result.term }}</td><td>{{ result.context }}</td><td><a class="btn btn-default" href={{result.source}}>{{result.sourceName}}</a></td>
-        </tr>
-      </div>
+      <tr ng-repeat="result in candidateResults">
+        <td>{{ result.relevancy }}</td><td>{{ result.term }}</td><td>{{ result.context }}</td><td><a class="btn btn-default" href={{result.source}}>{{result.sourceName}}</a></td>
+      </tr>
     </tbody>
   </table>
 </div>

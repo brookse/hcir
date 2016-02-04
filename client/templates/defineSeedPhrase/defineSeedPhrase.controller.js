@@ -7,6 +7,12 @@ function($scope, $location) {
       seedPhrases: [
         "coronary artery disease", "symptoms", "treatments"
       ]
+    },
+    {
+      name: "diabetes",
+      seedPhrases: [
+        "type 1"
+      ]
     }
   ];
 
