@@ -3,14 +3,6 @@ angular.module('myApp').controller('defineRelevanciesController',
 function($scope, $location) {
   $scope.candidateResults = [
     {
-      term: "shortness of breath",
-      context: "",
-      fullContext: "",
-      sourceName: "",
-      source: "",
-      relevancy: .76
-    },
-    {
       term: "heart attack",
       context: "A heart attack occurs if ...",
       fullContext: "A heart attack occurs if the flow of oxygen-rich blood to a section of heart muscle is cut off.",
