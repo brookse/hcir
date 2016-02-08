@@ -37,6 +37,24 @@
     </div>
   </div>
 
+  <h4>Create Meta-Concept</h4>
+  <form class="form" ng-submit="saveMetaConcept()">
+    <div class="input-group">
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="...">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right" ng-repeat="concept in concepts">
+            <li>{{concept.name}}</li>
+          </ul>
+        </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+      <input type="text" class="form-control" placeholder="Concept Name" ng-model="newconcept.name1"><input type="text" class="form-control" placeholder="Operation" ng-model="newconcept.operation"><input type="text" class="form-control" placeholder="Concept Name" ng-model="newconcept.name2">
+    </div>
+    <button type="submit" class="btn btn-default">Save Meta-Concept</button>
+  </form>
+  <br><br>
+
   <!--
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
