@@ -3,14 +3,56 @@ angular.module('myApp').controller('searchController',
 function($scope, $location) {
 //  $scope.subsubpage = 'templates/defineSeedPhrase/defineSeedPhrase.template.html';
 
-  $scope.queries = [
+  $scope.extraEntryNumbers = 0;
+  $scope.entryPossibilities = [
     {
-      nlq: "cad, coronary artery disease",
-      ogy: "",
-      uc: "diabetes",
-      cr: "",
-      name: "coronary artery disease"
+      title: "Natural Language Query",
+      subtitle: "Free text entry"
+    },
+    {
+      title: "Ontology Concept",
+      subtitle: "Premade concept entry"
+    },
+    {
+      title: "User Concept",
+      subtitle: "Concepts defined from seed terms"
     }
+  ];
+
+  $scope.entrySequence = [
+    {
+      id: 0,
+      possibilityId: 0
+    }
+  ]
+
+  $scope.extraEntrySequence = [
+  ];
+
+  $scope.addField = function() {
+    $scope.extraEntryNumbers++;
+    $scope.entrySequence.push({
+      id: $scope.extraEntryNumbers,
+      possibilityId: 0
+    });
+    $scope.extraEntrySequence.push({
+      id: $scope.extraEntryNumbers,
+      possibilityId: 0
+    });
+    console.log('adding a new entry space. total spaces:',$scope.extraEntryNumbers);
+    console.log('sequence:',$scope.entrySequence);
+  };
+
+  $scope.changeBody = function(newpid, entryid) {
+    if(entryid == 0) {
+      $scope.entrySequence[entryid].possibilityId = newpid;
+    } else {
+      $scope.extraEntrySequence[entryid-1].possibilityId = newpid;
+    }
+    console.log('newpid: ',newpid, ' | entryid: ',entryid);
+  };
+
+  $scope.queries = [
   ];
 
   $scope.search = function() {
@@ -23,4 +65,9 @@ function($scope, $location) {
     });
     $scope.sform = {};
   };
+
+  $scope.print = function() {
+    console.log('sequence:',$scope.entrySequence);
+  }
+
 }]);

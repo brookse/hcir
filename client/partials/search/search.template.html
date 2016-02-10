@@ -1,13 +1,17 @@
 <div class="searchTemplate" ng-controller="searchController">
-
-  <form class="form" ng-submit="search()">
-    <div class="form-group row">
-      <div class="col-md-12">
-        <label><h5>Name</h5></label>
-        <input type="text" class="form-control" name="name" ng-model="sform.name" required>
+  <div class="jumbotron">
+    <p>These are the instructions on how to use this page.</p>
+  </div>
+  <form class="form-horizontal" ng-submit="search()">
+    <div class="form-group">
+      <div class="col-sm-2">
+        <label for="name" ><h5>Name</h5></label>
+      </div>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" name="name" ng-model="sform.name" required>
       </div>
     </div>
-    <div class="form-group row">
+<!--    <div class="form-group row">
       <div class="col-md-4">
         <label><h5>Natural Language Query</h5></label>
         <span class="help-block">Free text</span>
@@ -51,9 +55,60 @@
 
       </div>
     </div>
+-->
+    <div class="form-group">
+      <div class="col-sm-2">
+        <label for="entrySequence[0].id"><h5>{{ entryPossibilities[entrySequence[0].possibilityId].title }}</h5></label>
+        <span class="help-block">{{ entryPossibilities[entrySequence[0].possibilityId].subtitle }}</span>
+      </div>
+      <div class="col-sm-10">
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" ng-click="changeBody(0, entrySequence[0].id)" class="btn btn-default">Natural Language Query</button>
+          <button type="button" ng-click="changeBody(1, entrySequence[0].id)" class="btn btn-default">Ontology Concept</button>
+          <button type="button" ng-click="changeBody(2, entrySequence[0].id)" class="btn btn-default">User Concept</button>
+        </div>
+        <textarea rows="3" class="form-control" id="entrySequence[0].id" name="entrySequence[0].id" ng-model="entrySequence[0].id" required></textarea><input type="checkbox"><label>Iterative Search</label>
+      </div>
+    </div>
+
+    <div ng-repeat="entry in extraEntrySequence">
+
+      <select class="form-control col-sm-1 col-sm-offset-4" style="width:25%">
+        <option>and</option>
+        <option>or</option>
+        <option>but not</option>
+      </select>
+
+      <br><br><br>
+
+      <div class="form-group">
+        <div class="col-sm-2">
+          <label for="entry.id"><h5>{{ entryPossibilities[entry.possibilityId].title }}</h5></label>
+          <span class="help-block">{{ entryPossibilities[entry.possibilityId].subtitle }}</span>
+        </div>
+        <div class="col-sm-10">
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" ng-click="changeBody(0, entry.id)" class="btn btn-default">Natural Language Query</button>
+            <button type="button" ng-click="changeBody(1, entry.id)" class="btn btn-default">Ontology Concept</button>
+            <button type="button" ng-click="changeBody(2, entry.id)" class="btn btn-default">User Concept</button>
+          </div>
+          <textarea rows="3" class="form-control" id="entry.id" name="entry.id" ng-model="entry.id" required></textarea><input type="checkbox"><label>Iterative Search</label>
+        </div>
+      </div>
+
+    </div>
 
     <div>
-      <button type="submit" class="btn btn-default pull-right" ng-disabled="disabled">Search</button>
+      <button type="button" class="btn btn-info pull-right" ng-click="addField()">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+    </div>
+    <br><br>
+  <!--  <button type="button" class="btn btn-info pull-right" ng-click="print()">
+      Print
+    </button> -->
+    <div>
+      <button type="submit" class="btn btn-primary pull-right" ng-disabled="disabled">Search</button>
     </div>
   </form>
 
