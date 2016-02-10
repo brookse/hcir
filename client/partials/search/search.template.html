@@ -65,7 +65,8 @@
         <div class="btn-group" role="group" aria-label="...">
           <button type="button" ng-click="changeBody(0, entrySequence[0].id)" class="btn btn-default">Natural Language Query</button>
           <button type="button" ng-click="changeBody(1, entrySequence[0].id)" class="btn btn-default">Ontology Concept</button>
-          <button type="button" ng-click="changeBody(2, entrySequence[0].id)" class="btn btn-default">User Concept</button>
+          <button type="button" ng-click="changeBody(2, entrySequence[0].id)" class="btn btn-default">User Concept</button><button type="button" ng-click="changeBody(2, entrySequence[0].id)" class="btn btn-default">User Concept</button>
+          <button type="button" ng-click="changeBody(3, entrySequence[0].id)" class="btn btn-default">Patient Records</button>
         </div>
         <textarea rows="3" class="form-control" id="entrySequence[0].id" name="entrySequence[0].id" ng-model="entrySequence[0].id" required></textarea><input type="checkbox"><label>Iterative Search</label>
       </div>
@@ -91,6 +92,7 @@
             <button type="button" ng-click="changeBody(0, entry.id)" class="btn btn-default">Natural Language Query</button>
             <button type="button" ng-click="changeBody(1, entry.id)" class="btn btn-default">Ontology Concept</button>
             <button type="button" ng-click="changeBody(2, entry.id)" class="btn btn-default">User Concept</button>
+            <button type="button" ng-click="changeBody(3, entry.id)" class="btn btn-default">Patient Records</button>
           </div>
           <textarea rows="3" class="form-control" id="entry.id" name="entry.id" ng-model="entry.id" required></textarea><input type="checkbox"><label>Iterative Search</label>
         </div>

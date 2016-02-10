@@ -16,6 +16,10 @@ function($scope, $location) {
     {
       title: "User Concept",
       subtitle: "Concepts defined from seed terms"
+    },
+    {
+      title: "Patient Records",
+      subtitle: "Database of patient records"
     }
   ];
 
